@@ -13,7 +13,7 @@ def ok(msg):
     print "\033[32m✓ \033[0m%s" % msg
 
 def main():
-    cwd = os.path.dirname(os.path.realpath(__file__))
+    cwd = os.getcwd()
     json_file = os.path.join(cwd, 'dependencies.json')
     if os.path.isfile(json_file) == False:
         err("dependencies.json not found in current folder")
@@ -26,7 +26,6 @@ def main():
     for lib in dependencies:
         command = pip.commands.install.InstallCommand()
         opts, args = command.parser.parse_args()
-        print opts
         requirements_set = command.run(opts, [lib])
         requirements_set.install(opts)
 
