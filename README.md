@@ -22,3 +22,7 @@ dependencies like:
 }
 ```
 Then **pip-check.py** and install(if required) everything in a simple line
+
+#Requirements
+* pip
+* setuptools
